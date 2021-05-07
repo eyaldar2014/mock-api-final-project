@@ -10,9 +10,9 @@
 
 const Project!
 
-function projectPlanning(idea){
+function projectPlanning (idea) {
   
-  const result = "awesome"
+    const result = "awesome"
 
 This project has both back-end and front-end. 
 Front-end will be writen using React, Css and JS.
@@ -27,7 +27,8 @@ The purpose of the back-end is to be secured, and offer itself as first basicall
 NiceTo Have:
 And idealy(depends on development time), to offer as similar experience as any mockApi system.
 
-  return result
+    return result
+
 }
 
 ------------------------------------
