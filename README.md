@@ -50,7 +50,7 @@ Key goals:
 
 ------------------------------------
 
-## section 1 :  planning widely (all parts, especially unknown) :
+## section 1 :  planning widely (all parts, especially unknown)
 
 - design idea (draw)
 - basic components
@@ -64,7 +64,7 @@ Key goals:
 
 ------------------------------------
 
-## section 2 :  planning deeply: (all steps)
+## section 2 :  planning deeply (all steps)
 
 - design idea (draw) :
 
@@ -121,7 +121,7 @@ Key goals:
 
 ------------------------------------
 
-## section 3 :  const times: (schedule)
+## section 3 :  const times (schedule)
 
     - add now to section 2 ^^
 
@@ -129,4 +129,9 @@ Key goals:
 
 ------------------------------------
 
-Created in the spirits of "learn anything in 20 hours": manage time and effort correctly and wisely. Win the "unknown" barrier
+Created in the spirits of "learn anything in 20 hours"
+
+manage time and effort correctly and wisely
+
+Win the "unknown" barrier
+
