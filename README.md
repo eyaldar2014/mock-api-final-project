@@ -50,14 +50,14 @@ Key goals:
 
 ------------------------------------
 
-## section 1 :  planning widely (all parts, especially unknown)
+## section 1 :  planning widely (all parts, mark unknown)
 
 - design idea (draw)
 - basic components
 - mongo endpoint
-- authentication // unknown
-- user register and login (with credentials) // unknown
-- basic interface with mockApi functionality (must to have) // unknown
+- authentication / unknown
+- user register and login (with credentials) / unknown
+- basic interface with mockApi functionality (must to have) / unknown
 - design
 
 * verify key points (tests. Github, code notes, avoid design margin)
@@ -99,16 +99,16 @@ Key goals:
       - Initialize webApp endpoint (users collection)
       - create users endpoints(users data collections)
 
-- authentication // unknown :
+- authentication / unknown :
 
       - healthy connection between my app to mongoDB, verification 
       - Users Schema
 
-- user register and login (with credentials) // unknown :
+- user register and login (with credentials) / unknown :
 
       - all the way to mongoDB // edit after research
 
-- basic interface with mockApi functionality (must to have) // unknown :
+- basic interface with mockApi functionality (must to have) / unknown :
 
       - all the way to mongoDB // edit after research
       - Dinamic Schemas for users?
@@ -129,9 +129,9 @@ Key goals:
 
 ------------------------------------
 
-Created in the spirits of "learn anything in 20 hours"
+Created in the spirits of "learn anything in 20 hours";
 
-manage time and effort correctly and wisely
+manage time and effort correctly and wisely;
 
-Win the "unknown" barrier
+Win the "unknown" barrier;
 
