@@ -106,7 +106,8 @@ Key goals:
     - all the way to mongoDB // edit after research
     - Dinamic Schemas for users?
 
--- design
+-- design : --
+
     - Nice to have (all functionality must work in UI) // check later
 
 * verify key points (tests. Github, code notes, avoid design margin)
@@ -115,7 +116,7 @@ Key goals:
 
 3. const times: (schedule)
 
--- add now to section 2 ^^
+-- add now to section 2 ^^ --
 
 * verify key points (tests. Github, code notes, avoid design margin)
 
