@@ -15,6 +15,7 @@ function projectPlanning (idea) {
   
   const result = "awesome"
 
+
 This project has both back-end and front-end. 
 Front-end will be writen using React, Css and JS.
 Back-end will be based on mongoDB using mongoose, on NodeJS.
@@ -27,6 +28,7 @@ The purpose of the back-end is to be secured, and offer itself as first basicall
 
 NiceTo Have:
 And idealy(depends on development time), to offer as similar experience as any mockApi system.
+
 
   return result
 
@@ -84,36 +86,36 @@ Key goals:
 
 - basic components :
 
-    - HOME
-    - Register
-    - Login
-    - Server user's stuff (data, options, guide)
-    - Utilities
-    - About
-    - Contact (form)
+      - HOME
+      - Register
+      - Login
+      - Server user's stuff (data, options, guide)
+      - Utilities
+      - About
+      - Contact (form)
 
 - mongo endpoint :
 
-    - Initialize webApp endpoint (users collection)
-    - create users endpoints(users data collections)
+      - Initialize webApp endpoint (users collection)
+      - create users endpoints(users data collections)
 
 - authentication // unknown :
 
-    - healthy connection between my app to mongoDB, verification 
-    - Users Schema
+      - healthy connection between my app to mongoDB, verification 
+      - Users Schema
 
 - user register and login (with credentials) // unknown :
 
-    - all the way to mongoDB // edit after research
+      - all the way to mongoDB // edit after research
 
 - basic interface with mockApi functionality (must to have) // unknown :
 
-    - all the way to mongoDB // edit after research
-    - Dinamic Schemas for users?
+      - all the way to mongoDB // edit after research
+      - Dinamic Schemas for users?
 
 - design :
 
-    - Nice to have (all functionality must work in UI) // check later
+      - Nice to have (all functionality must work in UI) // check later
 
 * verify key points (tests. Github, code notes, avoid design margin)
 
