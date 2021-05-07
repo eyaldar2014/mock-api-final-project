@@ -60,6 +60,7 @@ Key goals:
 2. planning deeply: (all steps)
 
 -- design idea (draw) :
+
       - draw pages, components and concepts.
 
       - understand mockApi idea (project core) :
@@ -77,6 +78,7 @@ Key goals:
         - load users data (self made API's with data)
 
 -- basic components :
+
     - HOME
     - Register
     - Login
@@ -86,17 +88,21 @@ Key goals:
     - Contact (form)
 
 -- mongo endpoint :
+
     - Initialize webApp endpoint (users collection)
     - create users endpoints(users data collections)
 
--- authentication // unknown
+-- authentication // unknown :
+
     - healthy connection between my app to mongoDB, verification 
     - Users Schema
 
--- user register and login (with credentials) // unknown
+-- user register and login (with credentials) // unknown :
+
     - all the way to mongoDB // edit after research
 
--- basic interface with mockApi functionality (must to have) // unknown
+-- basic interface with mockApi functionality (must to have) // unknown :
+
     - all the way to mongoDB // edit after research
     - Dinamic Schemas for users?
 
