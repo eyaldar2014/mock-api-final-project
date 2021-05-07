@@ -51,13 +51,13 @@ Key goals:
 
 ## section 1 :  planning widely (mark unknowns)
 
-- design idea (draw)
-- basic components
-- mongo endpoint
-- authentication / unknown
-- user register and login (with credentials) / unknown
-- basic interface with mockApi functionality (must to have) / unknown
-- design
+    - design idea (draw)
+    - basic components
+    - mongo endpoint
+    - authentication / unknown
+    - user register and login (with credentials) / unknown
+    - basic interface with mockApi functionality (must to have) / unknown
+    - design
 
 ***verify key points (tests. Github, code notes, avoid design margin)***
 
@@ -122,7 +122,7 @@ Key goals:
 
 ## section 3 :  const times (schedule)
 
-    - add now to section 2 ^^
+        - add now to section 2 ^^
 
 ***verify key points (tests. Github, code notes, avoid design margin)***
 
