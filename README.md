@@ -3,16 +3,17 @@
 • npm install  &&  npm run client-install
 
 
-//////////////////////////////////////////////////////////////////////////////////////////
+------------------------------------
 
 
 
 
-const Project!
+    const Project!
+
 
 function projectPlanning (idea) {
   
-    const result = "awesome"
+  const result = "awesome"
 
 This project has both back-end and front-end. 
 Front-end will be writen using React, Css and JS.
@@ -27,7 +28,7 @@ The purpose of the back-end is to be secured, and offer itself as first basicall
 NiceTo Have:
 And idealy(depends on development time), to offer as similar experience as any mockApi system.
 
-    return result
+  return result
 
 }
 
@@ -47,15 +48,15 @@ Key goals:
 
 ------------------------------------
 
-1. planning widely: (all parts, especially unknown)
+1. planning widely (all parts, especially unknown) :
 
--- design idea (draw)
--- basic components
--- mongo endpoint
--- authentication // unknown
--- user register and login (with credentials) // unknown
--- basic interface with mockApi functionality (must to have) // unknown
--- design
+- design idea (draw)
+- basic components
+- mongo endpoint
+- authentication // unknown
+- user register and login (with credentials) // unknown
+- basic interface with mockApi functionality (must to have) // unknown
+- design
 
 * verify key points (tests. Github, code notes, avoid design margin)
 
@@ -63,7 +64,7 @@ Key goals:
 
 2. planning deeply: (all steps)
 
--- design idea (draw) :
+- design idea (draw) :
 
       - draw pages, components and concepts.
 
@@ -81,7 +82,7 @@ Key goals:
         - API Schema and collections per user
         - load users data (self made API's with data)
 
--- basic components :
+- basic components :
 
     - HOME
     - Register
@@ -91,26 +92,26 @@ Key goals:
     - About
     - Contact (form)
 
--- mongo endpoint :
+- mongo endpoint :
 
     - Initialize webApp endpoint (users collection)
     - create users endpoints(users data collections)
 
--- authentication // unknown :
+- authentication // unknown :
 
     - healthy connection between my app to mongoDB, verification 
     - Users Schema
 
--- user register and login (with credentials) // unknown :
+- user register and login (with credentials) // unknown :
 
     - all the way to mongoDB // edit after research
 
--- basic interface with mockApi functionality (must to have) // unknown :
+- basic interface with mockApi functionality (must to have) // unknown :
 
     - all the way to mongoDB // edit after research
     - Dinamic Schemas for users?
 
--- design : --
+- design :
 
     - Nice to have (all functionality must work in UI) // check later
 
@@ -120,7 +121,7 @@ Key goals:
 
 3. const times: (schedule)
 
--- add now to section 2 ^^ --
+- add now to section 2 ^^
 
 * verify key points (tests. Github, code notes, avoid design margin)
 
