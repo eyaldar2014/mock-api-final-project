@@ -1,7 +1,6 @@
 # mock-api-final-project
 
-•npm install
-•npm run client-install
+• npm install  &&  npm run client-install
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -60,23 +59,24 @@ Key goals:
 
 2. planning deeply: (all steps)
 
--- design idea (draw)
-    - draw pages, components and concepts.
-    - understand mockApi idea: (project core)
-      - design backend
+-- design idea (draw) :
+      - draw pages, components and concepts.
+
+      - understand mockApi idea (project core) :
+        - design backend
         - authentication
         - link to front
         - User Schema
         - load users data
 
-      - design user functionallity:
+      - design user functionality :
         - users options
         - security
         - unique end-point
         - API Schema and collections per user
         - load users data (self made API's with data)
 
--- basic components
+-- basic components :
     - HOME
     - Register
     - Login
@@ -85,7 +85,7 @@ Key goals:
     - About
     - Contact (form)
 
--- mongo endpoint
+-- mongo endpoint :
     - Initialize webApp endpoint (users collection)
     - create users endpoints(users data collections)
 
@@ -109,8 +109,10 @@ Key goals:
 
 3. const times: (schedule)
 
--- add to 
+-- add now to section 2 ^^
 
 * verify key points (tests. Github, code notes, avoid design margin)
 
 ------------------------------------
+
+Created in the spirits of "learn anything in 20 hours": manage time and effort correctly and wisely. Win the "unknown" barrier
