@@ -59,7 +59,7 @@ Key goals:
     - basic interface with mockApi functionality (must to have) / unknown
     - design
 
-***verify key points (tests. Github, code notes, avoid design margin)***
+***verify key points (tests, github, code notes, avoid design margin)***
 
 ------------------------------------
 
@@ -116,7 +116,7 @@ Key goals:
 
       - Nice to have (all functionality must work in UI) // check later
 
-	***verify key points (tests. Github, code notes, avoid design margin)***
+	***verify key points (tests, github, code notes, avoid design margin)***
 
 ------------------------------------
 
@@ -124,7 +124,7 @@ Key goals:
 
         - add now to section 2 ^^
 
-***verify key points (tests. Github, code notes, avoid design margin)***
+***verify key points (tests, github, code notes, avoid design margin)***
 
 ------------------------------------
 *Created in the spirits of "learn anything in 20 hours";*
