@@ -50,7 +50,7 @@ Key goals:
 
 ------------------------------------
 
-1. planning widely (all parts, especially unknown) :
+## 1. planning widely (all parts, especially unknown) :
 
 - design idea (draw)
 - basic components
@@ -64,7 +64,7 @@ Key goals:
 
 ------------------------------------
 
-2. planning deeply: (all steps)
+## 2. planning deeply: (all steps)
 
 - design idea (draw) :
 
@@ -121,9 +121,9 @@ Key goals:
 
 ------------------------------------
 
-3. const times: (schedule)
+## 3. const times: (schedule)
 
-- add now to section 2 ^^
+  - add now to section 2 ^^
 
 * verify key points (tests. Github, code notes, avoid design margin)
 
