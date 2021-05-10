@@ -8,7 +8,7 @@ function User() {
 
   const getUser = async () =>{
     console.log('here')
-    const data = await axios.get('api/')
+    const data = await axios.get('/')
     console.log(data.statusText)
     setUser(data.statusText)
   }
