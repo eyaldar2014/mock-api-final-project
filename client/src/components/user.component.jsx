@@ -21,7 +21,7 @@ function User() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {user===null? <p>fetching user data</p> : <p>{`Hello ${user}`}</p> }
+        {user===null? <p>fetching user datas</p> : <p>{`Hello ${user}`}</p> }
         <a
           className="App-link"
           href="https://reactjs.org"
