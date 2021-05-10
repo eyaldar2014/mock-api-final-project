@@ -9,7 +9,7 @@ function User() {
   const getUser = async () =>{
     console.log('here')
 
-    const data = await axios.get('http://localhost:5000/')
+    const data = await axios.get('/api/')
     console.log(data)
     setUser(data.data)
   }

@@ -8,7 +8,7 @@ const path = require('path');
 
 app.use(cors());
 
-app.get('/', function (req, res) {
+app.get('/api/', function (req, res) {
   console.log('Request Type:', req.method)
   res.send('lalalali')
 })
