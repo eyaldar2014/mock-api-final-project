@@ -2,17 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 8000; 
-const os = require('os');
 
 app.use(cors());
 
-app.get('/api/getUser', (req, res) => res.send({ username: os.userInfo().username }));
-
-app.use('/', function (req, res, next) {
-  console.log('Request Type:', req.method)
-  res.send('lalala')
-})
-// app.get('/api/getUser', (req, res) => res.send({ username: os.userInfo().username }));
+// app.use('/', function (req, res, next) {
+//   console.log('Request Type:', req.method)
+//   res.send('lalala')
+// })
 
 
 if (process.env.NODE_ENV === 'production') {
