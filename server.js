@@ -1,11 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 8000; 
+const port = 5000; 
 
 app.use(cors());
 
-app.use('/', function (req, res, next) {
+app.get('/', function (req, res) {
   console.log('Request Type:', req.method)
   res.send('lalalala')
 })
