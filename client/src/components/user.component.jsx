@@ -6,16 +6,16 @@ import axios from 'axios';
 function User() {
   const [user, setUser] = useState(null)
 
-  // const getUser = async () =>{
-  //   console.log('here')
-  //   const data = await axios.get('api/')
-  //   console.log(data.statusText)
-  //   setUser(data.statusText)
-  // }
+  const getUser = async () =>{
+    console.log('here')
+    const data = await axios.get('api/')
+    console.log(data.statusText)
+    setUser(data.statusText)
+  }
 
-  // useEffect(() => {
-  //   getUser()
-  // }, [])
+  useEffect(() => {
+    getUser()
+  }, [])
 
   return (
     <div className="App">

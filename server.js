@@ -5,10 +5,10 @@ const port = 8000;
 
 app.use(cors());
 
-// app.use('/', function (req, res, next) {
-//   console.log('Request Type:', req.method)
-//   res.send('lalala')
-// })
+app.get('/', function (req, res, next) {
+  console.log('Request Type:', req.method)
+  res.send('lalala')
+})
 
 
 if (process.env.NODE_ENV === 'production') {
