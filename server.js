@@ -7,7 +7,7 @@ app.use(cors());
 
 app.use('/', function (req, res, next) {
   console.log('Request Type:', req.method)
-  res.send('lalala')
+  res.send('lalalala')
 })
 
 
