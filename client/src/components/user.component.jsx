@@ -7,18 +7,21 @@ function User() {
   const [user, setUser] = useState(null)
 
   const getUser = async () =>{
-    const data = await axios.get('api/getUser')
-    setUser(data.data)
+    console.log('here')
+    const data = await axios.get('api/')
+    console.log(data.statusText)
+    setUser(data.statusText)
   }
 
   useEffect(() => {
     getUser()
   }, [])
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {user===null? <p>fetching user data</p> : <p>{`Hello ${user.username}`}</p> }
+        {user===null? <p>fetching user data</p> : <p>{`Hello ${user}`}</p> }
         <a
           className="App-link"
           href="https://reactjs.org"
