@@ -72,7 +72,6 @@ Key goals:
       - understand mockApi idea (project core) :
         - design backend
         - authentication
-        - link to front
         - User Schema
         - load users data
 
@@ -96,7 +95,7 @@ Key goals:
 - mongo endpoint :
 
       - Initialize webApp endpoint (users collection)
-      - create users endpoints(users data collections)
+      - create users endpoints(users data functionality)
 
 - authentication / unknown :
 
@@ -122,14 +121,23 @@ Key goals:
 
 ## section 3 :  const times (schedule)
 
-        - add now to section 2 ^^
+    - design idea (draw) - 1 Hour
+    - basic components - 1 Hour
+    - mongo endpoint - 1 Hour
+    - authentication :user register and login (with credentials) / unknown :update times after starting. assumption 3-5 Hours
+    - Subscription With Payment (NiceToHave)
+    - product interface with mockApi functionality (must to have) / unknown. update times after starting per each stage. Project Core :
+      - Flexible Schema Per User // Use Switch
+      - create Route end-points for user // React Modified Route + mongo UsersData end-points
+      - desplay user stored data // Component of victorious !
+    - design (NiceToHave)
 
 ***verify key points (tests, github, code notes, avoid design margin)***
 
 ------------------------------------
-*Created in the spirits of "learn anything in 20 hours";*
 
 *Manage time and effort correctly and wisely;*
-
 *Win the "unknown" barrier;*
 
+
+![plot](./client/Flow.png)
