@@ -5,7 +5,7 @@ const port = 8000;
 
 app.use(cors());
 
-app.get('/', function (req, res, next) {
+app.use('/', function (req, res, next) {
   console.log('Request Type:', req.method)
   res.send('lalala')
 })
