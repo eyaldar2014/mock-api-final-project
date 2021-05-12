@@ -23,7 +23,8 @@ function Register() {
 
     e.preventDefault()
 
-    const req = await axios.post('http://localhost:5000/request/register/', data)
+    const req = await axios.post('/request/register/', data)
+
   }
 
 
