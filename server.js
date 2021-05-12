@@ -13,6 +13,11 @@ app.get('/api/', function (req, res) {
   res.send('lalalali')
 })
 
+app.post('/request/register/', function (req, res) {
+  console.log('Request Type:', req.method)
+  res.send('register')
+})
+
 
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets
