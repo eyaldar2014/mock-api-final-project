@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 
 function Register() {
 
-
-
   const [data, setData] = react.useState({
     name: '',
     password: ''
@@ -23,7 +21,9 @@ function Register() {
 
     e.preventDefault()
 
-    const req = await axios.post('/request/register/', data)
+    console.log(data)
+    const req = await axios.post('/request/register/', {data: data})
+
 
   }
 
