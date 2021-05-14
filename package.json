@@ -2,7 +2,7 @@
   "name": "boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "client-install": "cd client && npm install",
     "start": "node server.js",
@@ -15,13 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "concurrently": "^6.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.12.9",
     "os": "^0.1.1",
     "react-router-dom": "^5.2.0"
+    
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
