@@ -5,12 +5,12 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const port = 5000; 
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://eyal:87654321@currentcluster.qukhk.mongodb.net/currentCluster?retryWrites=true&w=majority'
-, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// const mongoose = require('mongoose');
+// mongoose.connect('mongodb+srv://eyal:87654321@currentcluster.qukhk.mongodb.net/currentCluster?retryWrites=true&w=majority'
+// , {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -40,18 +40,19 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
-  app.listen(process.env.PORT || port , () =>{
-    console.log(`Server started on port ${port}`)
-});
+app.listen(process.env.PORT || port , () =>{
+  console.log(`Server started on port ${port}`)
 });
 
-const userSchema = new mongoose.Schema({
-  name: String,
-  password: String
-});
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   // we're connected!
+  
+// });
 
-const User = mongoose.model('User', userSchema);
+// const userSchema = new mongoose.Schema({
+//   name: String,
+//   password: String
+// });
+// const User = mongoose.model('User', userSchema);
