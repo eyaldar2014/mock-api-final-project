@@ -20,7 +20,7 @@ function Register() {
     e.preventDefault()
 
     console.log(data)
-    const req = await axios.post('/api/users/register', {data: data})
+    const req = await axios.post('/api/users/register', {data})
   }
 
 
