@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const port = 5000; 
 
+const usersRoute = require('./routes/routes.users')
+
+
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://eyal:87654321@currentcluster.qukhk.mongodb.net/currentCluster?retryWrites=true&w=majority'
 , {
@@ -16,19 +19,18 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use('/api/users',usersRoute);
 
-app.get('/api/', function (req, res) {
-  console.log('Request Type:', req.method)
-  res.send('lalalali')
-})
+// app.get('/api/', function (req, res) {
+//   console.log('Request Type:', req.method)
+//   res.send('lalalali')
+// })
 
 app.post('/request/register/', function (req, res) {
   console.log('Request Type:', req.method)
   console.log('Request data:', req.body)
-
   res.send('success !')
 })
-
 
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets
@@ -40,7 +42,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
@@ -51,8 +52,3 @@ db.once('open', function() {
 });
 
 
-const userSchema = new mongoose.Schema({
-  name: String,
-  password: String
-});
-const User = mongoose.model('User', userSchema);

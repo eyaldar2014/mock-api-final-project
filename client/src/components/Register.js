@@ -17,14 +17,10 @@ function Register() {
   }
 
   const userRegister = async (e) =>{
-    // console.log('register here')
-
     e.preventDefault()
 
     console.log(data)
-    const req = await axios.post('/request/register/', {data: data})
-
-
+    const req = await axios.post('/api/users/register', {data: data})
   }
 
 
