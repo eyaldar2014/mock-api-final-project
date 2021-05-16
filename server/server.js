@@ -9,7 +9,8 @@ const usersRoute = require('./routes/routes.users')
 
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://eyal:87654321@currentcluster.qukhk.mongodb.net/currentCluster?retryWrites=true&w=majority'
+
+mongoose.connect('mongodb+srv://eyal:87654321@currentcluster.ub7sd.mongodb.net/currentCluster?retryWrites=true&w=majority'
 , {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -26,11 +27,11 @@ app.use('/api/users',usersRoute);
 //   res.send('lalalali')
 // })
 
-app.post('/request/register/', function (req, res) {
-  console.log('Request Type:', req.method)
-  console.log('Request data:', req.body)
-  res.send('success !')
-})
+// app.post('/request/register/', function (req, res) {
+//   console.log('Request Type:', req.method)
+//   console.log('Request data:', req.body)
+//   res.send('success !')
+// })
 
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets

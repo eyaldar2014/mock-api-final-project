@@ -1,8 +1,15 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  name: String,
-  password: Number
+  name: {
+    type: String,
+    required: true,
+    index: true
+  },
+  password: {
+    type: Number,
+    required: true
+  },
   // this.validate
 });
 

@@ -16,7 +16,7 @@ router.post('/register', async(req, res) => {
     console.log('Request data:', req.body)
 
     const { name, password } = req.body.data
-    const user = new User({name, password})
+    const user = new User({name : name, 'password' : password})
     console.log(user)
 
     await user.save().then(() => {
@@ -24,7 +24,7 @@ router.post('/register', async(req, res) => {
     res.send('success !')
   })
   .catch(error => {
-    console.error(`Error`);
+    console.error(`Error:`, error);
     res.send('Failed !')
   });
 
