@@ -1,23 +1,31 @@
+// create controller
+
+
 const express = require('express');
 const router = express.Router();
 const User = require('../modules/modules.user');
 // const users = [];
-// const usersControllers = require('')
+const userControllers = require('../controllers/controller.user')
 
 
 
 router.post('/register', async(req, res) => {
   
   // if controllers approve.. then 'call' the schema here
-  // contrtollers...
-  // contrtollers...
+  const { name, password } = req.body.data
+  
+  
+  
+    userControllers(name, password)
+
 
     console.log('Request Type:', req.method)
     console.log('Request data:', req.body)
 
-    const { name, password } = req.body.data
+    
+    
     const user = new User({name : name, 'password' : password})
-    console.log(user)
+    console.log("new User: " + user)
 
     await user.save().then(() => {
     console.log('successfully ran program');

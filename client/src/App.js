@@ -1,4 +1,9 @@
-// import User from './components/user.component';
+// self comments:
+// after loging in, route should be closed..
+// it's depends on one each other
+// authentication - token should be used through here
+// also : make sure about "default route". if type "/wefdsfasdd" for example
+
 
 import React from 'react'
 import './App.css';
@@ -8,6 +13,8 @@ import { BrowserRouter } from 'react-router-dom';
 import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
+// import User from './components/user.component';
+
 
 function App() {
 
