@@ -22,16 +22,9 @@ app.use(bodyParser.json());
 
 app.use('/api/users',usersRoute);
 
-// app.get('/api/', function (req, res) {
-//   console.log('Request Type:', req.method)
-//   res.send('lalalali')
-// })
 
-// app.post('/request/register/', function (req, res) {
-//   console.log('Request Type:', req.method)
-//   console.log('Request data:', req.body)
-//   res.send('success !')
-// })
+
+
 
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets

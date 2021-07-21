@@ -3,7 +3,7 @@
 
 const express = require('express');
 const router = express.Router();
-const User = require('../modules/modules.user');
+const User = require('../models/model.user');
 // const users = [];
 const userControllers = require('../controllers/controller.user')
 

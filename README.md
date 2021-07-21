@@ -140,4 +140,4 @@ Key goals:
 *Win the "unknown" barrier;*
 
 
-![plot](./client/Flow.png)
+![plot](./Flow.png)
