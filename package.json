@@ -2,7 +2,7 @@
   "name": "boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": ".",
   "homepage": ".",
   "scripts": {
     "client-install": "cd client && npm install",
