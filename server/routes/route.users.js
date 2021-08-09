@@ -1,36 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/model.user');
-
-const userControllers = require('../controllers/controller.user')
+const authenticateToken = require('../middlewares/middleware.authentication')
 
 
-router.post('/register', async (req, res) => {
-
-  console.log('Request Type:', req.method)
-  console.log('Request data:', req.body)
-
-  try {
-
-    // if controllers approve.. then 'call' the schema here
-
-    const { name, password } = req.body
-    userControllers(name, password)
+const UsersController = require('../controllers/controller.user')
+const usersController = new UsersController()
 
 
-    const user = new User({ name: name, 'password': password })
-    console.log("new User: " + user)
+router.post('/register', usersController.createUser)
 
-    await user.save().then(() => {
-      console.log('successfully ran program');
-      res.send('success !')
-    })
-  }
-  catch (error) {
-    console.error(`Error:`, error);
-    res.send('Failed !')
-  }
-})
+router.post('/login', usersController.loginUser)
+
+router.post('/logout', authenticateToken, usersController.logoutUser)
 
 
 module.exports = router;
+
