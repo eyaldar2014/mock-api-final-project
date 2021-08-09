@@ -1,37 +1,36 @@
 # mock-api-final-project
 
-• npm install 
-
-• npm run client-install 
-
-
+• npm install & npm run client-install 
 
 
     const Project!
 
 
-function projectPlanning (idea) {
+      function projectPlanning (idea) {
   
-  const result = "awesome"
+      const result = "awesome"
 
 
-This project has both back-end and front-end. 
-Front-end will be writen using React, Css and JS.
-Back-end will be based on mongoDB using mongoose, on NodeJS.
+      This project has both back-end and front-end. 
+      Front-end will be writen using React, Css and JS.
+      Back-end will be based on mongoDB using mongoose library, with NodeJS.
 
-The idea is a mock api: it offers itself to the users as a server, including server actions: 
-start your own api with collections, passwords and validations.
+      The idea is a mock api: it offers itself to the users as a server, 
+      including server actions: 
+      start your own api with collections and validations.
 
-MusTo Have:
-The purpose of the back-end is to be secured, and offer itself as first basically with an option to Register, and have your own end-point(probably with Routes).
+      Must Have:
+      The purpose of the back-end is to be secured, and optioin to create 
+      your own end-point and probably with routes.
 
-NiceTo Have:
-And idealy(depends on development time), to offer as similar experience as any mockApi system.
+      Nice To Have:
+      Idealy (depends on development time and pority), offer a brilliant UI 
+      experience as any mockApi system.
 
 
-  return result
+      return result
 
-}
+      }
 
 ------------------------------------
 
@@ -52,11 +51,11 @@ Key goals:
 ## section 1 :  planning widely (mark unknowns)
 
     - design idea (draw)
-    - basic components
+    - basic react installation
     - mongo endpoint
     - authentication / unknown
     - user register and login (with credentials) / unknown
-    - basic interface with mockApi functionality (must to have) / unknown
+    - basic interface with mockApi functionality (must have) 
     - design
 
 ***verify key points (tests, github, code notes, avoid design margin)***
@@ -87,7 +86,7 @@ Key goals:
       - HOME
       - Register
       - Login
-      - Server user's stuff (data, options, guide)
+      - Server user's interface (data, options, guide)
       - Utilities
       - About
       - Contact (form)
@@ -95,7 +94,7 @@ Key goals:
 - mongo endpoint :
 
       - Initialize webApp endpoint (users collection)
-      - create users endpoints(users data functionality)
+      - create users endpoints (users data functionality)
 
 - authentication / unknown :
 
@@ -104,16 +103,17 @@ Key goals:
 
 - user register and login (with credentials) / unknown :
 
-      - all the way to mongoDB // edit after research
+      - basic registration, login, autehntication and UI. including tests
 
 - basic interface with mockApi functionality (must to have) / unknown :
 
-      - all the way to mongoDB // edit after research
-      - Dinamic Schemas for users?
+      - Dinamic Schemas for any users
+      - Dinamic UI for any user
+      - Authentication security
 
 - design :
 
-      - Nice to have (all functionality must work in UI) // check later
+      - Nice to have (all functionality must work in comfortable and good looking UI)
 
 	***verify key points (tests, github, code notes, avoid design margin)***
 
@@ -124,12 +124,14 @@ Key goals:
     - design idea (draw) - 1 Hour
     - basic components - 1 Hour
     - mongo endpoint - 1 Hour
+
     - authentication :user register and login (with credentials) / unknown :update times after starting. assumption 3-5 Hours
-    - Subscription With Payment (NiceToHave)
+
     - product interface with mockApi functionality (must to have) / unknown. update times after starting per each stage. Project Core :
       - Flexible Schema Per User // Use Switch
       - create Route end-points for user // React Modified Route + mongo UsersData end-points
       - desplay user stored data // Component of victorious !
+
     - design (NiceToHave)
 
 ***verify key points (tests, github, code notes, avoid design margin)***
