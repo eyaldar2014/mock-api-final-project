@@ -1,9 +1,10 @@
+// require('./db/mongoose')
+
 const express = require('express');
 const app = require('./app')
 const port = process.env.PORT || 5000
-
 const path = require('path');
-const os = require('os');
+
 
 if (process.env.NODE_ENV === 'production') {
   // Exprees will serve up production assets
