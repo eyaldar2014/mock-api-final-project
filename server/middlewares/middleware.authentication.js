@@ -6,8 +6,10 @@ const authenticateToken = async (req, res, next) => {
   try {
     // removing "Bearer " from 'Authorization' value (string)
     const token = req.header('Authorization').replace("Bearer ", "")
+    // unpacks token to user's _id that was used to create the token, and the time it was created
     const decoded = jwt.verify(token, "stringSignature")
 
+    // checks if the user exists and token is up to date
     const user = await User.findOne({ 
       _id : decoded["_id"],
       'tokens.token' : token 
@@ -21,6 +23,7 @@ const authenticateToken = async (req, res, next) => {
     next()
 
   } catch (error) {
+    // Unauthorized
     return res.sendStatus(401)
   }
 }

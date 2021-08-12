@@ -83,10 +83,10 @@ userSchema.statics.findByCredentials = async (email, password) => {
 
   return user
 }
-// 'middleware public data filter'
+// 'middleware public data filter'. runs every time before send. "automatically" hides the given list of properties before sending the object in the response.
 userSchema.methods.toJSON = function () {
 
-  // Documents have a toObject method which converts the 'mongoose document' into a plain 'JavaScript object'
+  // Documents has a toObject method which converts the 'mongoose document' into a plain 'JavaScript object'
   const { _id, email } = this.toObject()
   return { _id, email }
 }

@@ -1,6 +1,8 @@
 require('./fixtures/mongoose')
 const app = require('../app')
 
+// supertest is HTTP library that allows testing the nodeJS server. it runs the app each time seperatedly, 
+// and allows modifying: request method, set authorization, send request and receive response as for wide example
 const request = require('supertest')
 const User = require('../models/model.user')
 const {
@@ -12,9 +14,9 @@ const {
   closeDatabaseConnection
 } = require('./fixtures/db')
 
-
+// runs before each test
 beforeEach(setupDatabase)
-
+// runs after all tests completed
 afterAll(closeDatabaseConnection)
 
 
@@ -39,6 +41,7 @@ test('Should signup a new user', async () => {
     },
     token: user.tokens[0].token
   })
+  // password should be "hashed"
   expect(user.password).not.toBe('12345678aA')
 })
 
@@ -54,6 +57,7 @@ test('Should login existing user', async () => {
   const user = await User.findById(userOneId)
   expect(user).not.toBeNull()
 
+  // new token is being created at login
   expect(response.body.token).toBe(user.tokens[1].token)
 })
 
@@ -122,7 +126,9 @@ test('Should update user\'s using valid user fields', async () => {
 
   const user = await User.findById(userOneId)
   expect(user.email).toBe("kofiko@gmail.com")
+  // again password should be hashed
   expect(user.password).not.toBe("123123aA")
+  expect(user.password).not.toBeNull()
 })
 
 test('Should NOT update user\'s using invalid user fields', async () => {
@@ -132,6 +138,7 @@ test('Should NOT update user\'s using invalid user fields', async () => {
     .send({
       location: "anywhere"
     })
+    // bad request
     .expect(400)
 
     const response2 = await request(app)
@@ -141,5 +148,6 @@ test('Should NOT update user\'s using invalid user fields', async () => {
     // invalid password 
       password: "123456"
     })
+    // validation failure (internal error)
     .expect(500)
 })

@@ -1,3 +1,4 @@
+// uses production mongodb server
 require('./db/mongoose')
 
 const express = require('express');

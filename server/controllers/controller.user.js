@@ -24,8 +24,6 @@ const userController = function () {
   this.loginUser = async (req, res) => {
 
     try {
-      userValidation.loginUserValidation(req, res)
-
       const user = await User.findByCredentials(req.body.email, req.body.password)
       const token = await user.generateAuthToken()
 
@@ -46,10 +44,14 @@ const userController = function () {
     }
   }
   this.getProfile = async (req, res) => {
-    res.send(req.user)
+    
+    try {
+      res.send(req.user)
+    } catch (error) {
+      res.sendStatus(500)
+    }
   }
   this.deleteUser = async (req, res) => {
-    // console.log('delete request on "/users/me" route for single user')
 
     try {
       const user = await User.findByIdAndDelete(req.user._id)
@@ -62,7 +64,6 @@ const userController = function () {
     }
   }
   this.updateUser = async (req, res) => {
-
 
     // validate update fields
     const updates = Object.keys(req.body)
