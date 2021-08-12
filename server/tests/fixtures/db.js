@@ -13,11 +13,22 @@ const userOne = {
   }]
 }
 
+const userTwoId = new mongoose.Types.ObjectId()
+const userTwo = {
+  _id: userTwoId,
+  email: "neanderthal@gmail.com",
+  password: "bB00000000",
+  tokens: [{
+    token: jwt.sign({ _id: userTwoId }, "stringSignature")
+  }]
+}
+
 
 const setupDatabase = async () => {
   await User.deleteMany()
 
-  await new User(userOne).save()  
+  await new User(userOne).save()
+  await new User(userTwo).save()
 }
 
 // close the connection with mongodb
@@ -28,6 +39,10 @@ const closeDatabaseConnection = async () => {
 
 
 module.exports = {
+  userOneId,
+  userTwoId,
+  userOne,
+  userTwo,
   setupDatabase,
   closeDatabaseConnection 
 }

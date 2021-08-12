@@ -41,6 +41,17 @@ const userValidation = function () {
 
     return true
   }
+  this.updateUserValidation = (req, res, updates) => {
+    
+    const allowedUpdates = ['password', 'email']
+    const isValideOperation = updates.reduce((sum, val) => {
+      return sum && allowedUpdates.includes(val)
+    }, true)
+    
+    if (!isValideOperation) return false
+
+    return true
+  }
 }
 
 

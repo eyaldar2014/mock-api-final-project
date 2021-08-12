@@ -13,6 +13,12 @@ router.post('/login', usersController.loginUser)
 
 router.post('/logout', authenticateToken, usersController.logoutUser)
 
+router.get('/me', authenticateToken, usersController.getProfile)
+
+router.delete('/me', authenticateToken, usersController.deleteUser)
+
+router.patch('/me', authenticateToken, usersController.updateUser)
+
 
 module.exports = router;
 
