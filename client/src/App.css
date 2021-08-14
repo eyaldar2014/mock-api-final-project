@@ -1,0 +1,146 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Accessories */
+
+/* middle title background horizintak line */
+.bgLine{
+  position: relative;
+  /* z-index: 1; */
+}
+.bgLine:before {
+  border-top: 2px solid rgb(97, 84, 84);
+  content:"";
+  margin: 0 auto; 
+  position: absolute;
+  top: 50%; left: 0; right: 0; bottom: 0;
+  max-width: 75%;
+  /* maybe media query later */
+  z-index: -1;
+}
+.bgLine span { 
+  background: white; 
+  color: rgb(97, 84, 84);
+  padding: 0 15px; 
+}
+
+
+/* Landing */
+.landing {
+  background-color: blue;
+  height: 500px;
+}
+
+/* navbar & footer*/
+.navbarContainer{
+  /* height: 100px; */
+  /* width: 100vw; */
+  z-index: 1;
+  min-width: 1000px;
+  background: rgb(52, 63, 82);
+  /* sticky */
+  position: sticky;
+  top: 0;
+  padding: 0 200px;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 20px;
+}
+.navItem{
+  text-decoration: none;
+  color: white;
+}
+.navItem:hover{
+  color: black;
+}
+.footerContainer{
+  min-width: 1000px;
+  background: rgb(52, 63, 82);
+  padding: 0 200px;
+}
+.footer{
+display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 20px;
+}
+.innerList{
+  list-style: none;
+}
+.footHead{
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+}
+.footItem{
+  text-decoration: none;
+  color: white;
+}
+.footItem:hover{
+  color: black;
+}
+.topHr{
+  padding-top: 20px;
+  border: none;
+  border-bottom: white 1px solid;
+}
+.bottomHr{
+  padding-top: 20px;
+  border: none;
+  border-top: white 1px solid;
+}
+.fooBottomCont{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* Not Found */
+.notFound{
+  min-height: 600px;
+  /* background: white; */
+}
+
+/* form */
+.formContainer{
+  min-height: 700px;
+  min-width: 1000px;
+  padding: 0 200px;
+  /* background: aquamarine; */
+}
+.form{
+  padding: 100px;
+  position: relative;
+}
+.form h1{
+  text-align: center;
+  margin-bottom: 50px;
+}
+.formBgImg{
+  height: 650px;
+  background: url("https://images.unsplash.com/photo-1466875603152-be5267bd180e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1366&q=80") no-repeat center center/ cover;
+}
+.formInputs{
+  position: absolute;
+  top: 300px;
+  left: calc(50% - 180px);
+
+}
+.formInput{
+  width: 360px;
+  height: 50px;
+  margin-top: 20px;
+  border-width: 1px;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: white;
+  font-size: 1.3rem;
+}
+.formTextarea{
+  height: 150px;
+}
