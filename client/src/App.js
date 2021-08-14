@@ -1,31 +1,73 @@
 // self comments:
 // after loging in, route should be closed..
-// it's depends on one each other
-// authentication - token should be used through here
+// log in and out depends on each other
+// authentication - token should be used through here, through router -- unknown
 // also : make sure about "default route". if type "/wefdsfasdd" for example
 
 
-import React from 'react'
 import './App.css';
-// import { Route } from 'react-router';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import react from 'react'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
+import Landing from './components/Landing'
+import Navbar from './components/Navbar'
+import About from './components/About'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
+import NotFound from './components/NotFound'
+import Form from './components/Form'
 
 
 
 function App() {
 
+  const [load, setLoad] = react.useState(true)
+  react.useEffect(() => {
+
+    setTimeout(() => {
+      setLoad(false)
+    }, 2000)
+  }, []);
+
+
   return (
     <div>
-      {/* refresh react */}
       <Router>
-        {/* <Route exact path='/' component={User} /> */}
-        <Route exact path='/' component={Home} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
+        <Navbar />
+
+        {load ? <Landing /> : <>
+
+          <Switch>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/form">
+              <Form />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/register">
+              <Register />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/">
+              <NotFound />
+            </Route>
+          </Switch>
+
+        </>
+        }
+
+        <Footer />
       </Router>
 
     </div>
