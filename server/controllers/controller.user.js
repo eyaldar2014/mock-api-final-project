@@ -15,10 +15,16 @@ const userController = function () {
       const user = await newUser.save()
       const token = await user.generateAuthToken()
 
-      return res.status(201).send({ user: user, token })
+      const authToken = "Bearer " + token;
+      // req.headers.set("Authorization", authToken)
+      // req.headers.authorization = token;
+      return res.status(201).cookie('access_token', authToken).send({ user: user, token })
+      // .set("Authorization", authToken)
+      
     }
     catch (err) {
-      return res.status(400).send({ "Error!": err.message })
+      // return res.status(400).send({ "Error!": err.message })
+      return res.status(400).send({ "details": err.message })
     }
   }
   this.loginUser = async (req, res) => {
@@ -45,6 +51,7 @@ const userController = function () {
   }
   this.getProfile = async (req, res) => {
     
+    console.log('here')
     try {
       res.send(req.user)
     } catch (error) {

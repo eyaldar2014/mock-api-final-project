@@ -2,16 +2,40 @@ import react from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+
+import SignIn from './SignIn'
+
 function Home() {
 
+  const [loggedIn, setLoggedIn] = react.useState(false)
+  
+  // react.useEffect(() => {}, [])
+
+
+  const pageState = (data)=> {
+
+    if (data === true) {
+      setLoggedIn(true)
+    }
+  }
+
+  const checkToken = async () => {
+
+    const response = await axios.get('/api/users/me')
+    console.log(response)
+  }
+  
   return <>
+
+  {!loggedIn ? <SignIn pageState={pageState} /> :
+  <>
+  <div>user is logged in</div>
+  
+  <button onClick={checkToken}>click me</button>
+  </>
+  }
     
-    <h1>Home</h1>
-    <br/>
-    
-    <Link to='/register'>Register</Link>
-    <br/>
-    <Link to='/login'>Login</Link>
+
   </>
 }
 
