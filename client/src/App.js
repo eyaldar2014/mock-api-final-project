@@ -1,8 +1,15 @@
 // self comments:
+//
+
 // after loging in, route should be closed..
-// log in and out depends on each other
-// authentication - token should be used through here, through router -- unknown
-// also : make sure about "default route". if type "/wefdsfasdd" for example
+// delete components login and register
+// delete imports here ^
+
+// note : react authentication
+// note : fix authentication issue
+// note : hide JWT key-signature 
+
+
 
 
 import './App.css';

@@ -1,18 +1,18 @@
 import react from 'react'
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import ImageHeader from './Accessories/ImageHeader'
 
 
-function SignIn({pageState}) {
-// react.useEffect(() => {}, [])
+function SignIn({ pageState }) {
+  // react.useEffect(() => {}, [])
 
 
-// const [action, setAction] = react.useState({
-//   current: 'Login',
-//   second: 'Register'
-// })
+  // const [action, setAction] = react.useState({
+  //   current: 'Login',
+  //   second: 'Register'
+  // })
 
 
 
@@ -46,6 +46,12 @@ function SignIn({pageState}) {
 
   const setPage = (e) => {
 
+    // if change login \ register than hide comment
+    setResponse({
+      success: true,
+      status: ""
+    })
+
     if (action.current === "Login") {
       setAction({
         current: 'Register',
@@ -61,25 +67,22 @@ function SignIn({pageState}) {
   }
 
 
-
-
-  const userDetails = (e) => {
+  const userDetails = async (e) => {
     e.preventDefault()
     e.target.disabled = true
 
-    const response = callApi()
+    const response = await callApi()
     console.log(response)
 
     // if error print error to the user and try again
 
 
 
-
-    // if success then change page component to logged in
-    // if success - what should I do with the token?
-
-    
-
+    // if success then change page component to logged in (send true to Home component)
+    // if success - what should I do with the token? understood : cookies or so
+    // where should I redirect the client? the place where the mockApi schema is made - new component
+    // this new component should depend on the authentication proccess and token. also, must be unique for each 
+    // customer (schema like profile)
 
 
     return e.target.disabled = false
@@ -92,71 +95,82 @@ function SignIn({pageState}) {
 
       console.log('result', result.data)
 
-      return pageState(true)
+      pageState(true)
+
+      return true
     }
     catch (error) {
-      console.error('error', 'status: ' + error.response.status, error.response.data)
+
+      console.log(error.response.data)
+      if (error.response.data.details.includes('duplicate')){
+        error.response.data.details = 'email already exists'
+      }
+      else if (!error.response.data.details.includes('password must ')){
+        error.response.data.details = 'invalid login'
+      }
+
+      console.error('error', 'status: ' + error.response.status, error.response.data.details)
+
+
       setResponse({
         success: false,
-        status: 'invalid fields'
+        status: error.response.data.details
       })
+
+      return false
     }
   }
 
-  
+
   return <>
 
-  <div className="formContainer">
-    <div className='form'>
-      <ImageHeader name={action.current} img='formBgImg' />
+    <div className="formContainer">
+      <div className='form'>
+        <ImageHeader name={action.current} img='formBgImg' />
 
-      <form className="formInputs">
-        <div className='formInputsSpan'>
-          {action.current === 'Login' ? null : <>
-            <div className='formInputsSpanBg'>
-              <span>Note that password must contain at least: </span>
-              <br />
-              <span>* one numeric digit </span>
-              <br />
-              <span>* one uppercase character</span>
-              <br />
-              <span>* one lowercase character</span>
-              <br />
-              <br />
-            </div>
-          </>}
-          
+        <form className="formInputs">
+          <div className='formInputsSpan'>
+            {action.current === 'Login' ? null : <>
+              <div className='formInputsSpanBg'>
+                <span>Note that password must contain at least: </span>
+                <br />
+                <span>* one numeric digit </span>
+                <br />
+                <span>* one uppercase character</span>
+                <br />
+                <span>* one lowercase character</span>
+                <br />
+                <br />
+              </div>
+            </>}
+
             {apiResponse.success ? null : <>
               <div className='formInputsSpanBg'>
-              <span>invalid attept : {apiResponse.status} </span>
+                <span>invalid attept : {apiResponse.status} </span>
               </div>
-              </>}
+            </>}
+          </div>
+
+
+          <br />
+          <input className="formInput" type="text" name="email" placeholder="Email" value={inputs.email} onChange={handleChange} />
+          <br />
+          <input className="formInput" type="text" name="password" placeholder="Password" value={inputs.password} onChange={handleChange} />
+          <br />
+          <input className="formInput" type="submit" value="Submit" onClick={userDetails} />
+          <br />
+        </form>
+
+        <div className="formSpan">
+          <span> Or <a onClick={setPage}>{action.second} Now</a></span>
         </div>
 
-
-        <br />
-        <input className="formInput" type="text" name="email" placeholder="Email" value={inputs.email} onChange={handleChange} />
-        <br />
-        <input className="formInput" type="text" name="password" placeholder="Password" value={inputs.password} onChange={handleChange} />
-        <br />
-        <input className="formInput" type="submit" value="Submit" onClick={userDetails} />
-        <br />
-      </form>
-
-      <div className="formSpan">
-        <span> Or <a onClick={setPage}>{action.second} Now</a></span>
       </div>
-
     </div>
-  </div>
 
-</>
-
+  </>
 
 
-
-
-{/* <Link to='/'>back Home</Link> */}
 }
 
 export default SignIn;

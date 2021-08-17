@@ -15,12 +15,9 @@ const userController = function () {
       const user = await newUser.save()
       const token = await user.generateAuthToken()
 
-      const authToken = "Bearer " + token;
-      // req.headers.set("Authorization", authToken)
-      // req.headers.authorization = token;
-      return res.status(201).cookie('access_token', authToken).send({ user: user, token })
-      // .set("Authorization", authToken)
-      
+      // a way to solve with cookies instead of headers
+      // to delete cookie use : 'res.clearCookie("key")'
+      return res.status(201).cookie('access_token', token).send({ user: user, token })
     }
     catch (err) {
       // return res.status(400).send({ "Error!": err.message })
@@ -35,7 +32,7 @@ const userController = function () {
 
       return res.send({ user, token })
     } catch (err) {
-      return res.status(400).send({ "Error!": err.message })
+      return res.status(400).send({ "details": err.message })
     }
   }
   this.logoutUser = async (req, res) => {

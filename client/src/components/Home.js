@@ -21,10 +21,17 @@ function Home() {
 
   const checkToken = async () => {
 
-    const response = await axios.get('/api/users/me')
-    console.log(response)
+    try{
+      
+      const response = await axios.get('/api/users/me')
+      console.log(response)
+    }
+    catch(error){
+      console.log(error)
+    }
+    
   }
-  
+
   return <>
 
   {!loggedIn ? <SignIn pageState={pageState} /> :
