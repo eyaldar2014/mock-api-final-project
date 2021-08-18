@@ -1,5 +1,7 @@
 // uses production mongodb server
-require('./db/mongoose')
+require('./db/mongooseAdmin')
+// uses production mockApi server
+// require('./db/usersMock')
 
 const express = require('express');
 const app = require('./app')
@@ -20,3 +22,7 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(port , () => {
   console.log('listnening on port', port)
 })
+
+
+
+

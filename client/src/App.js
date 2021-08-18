@@ -1,13 +1,13 @@
 // self comments:
 //
 
-// CI / CD
+// CI / CD - docker & jenkins (under development on test project)
 
 // note : react authentication
 // note : react tests
 
-// note : hide JWT key-signature 
-// note : expire JWT token
+// note : hide JWT key-signature - ENV file and git ignore? on cloud service?
+// note : expire JWT token - very simple. Nice To Have
 
 
 

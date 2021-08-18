@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt')
 const validator = require('validator')
 const jwt = require('jsonwebtoken')
 
+const mongooseAdmin = require('../db/mongooseAdmin');
+
 
 const userSchemaOptions = {
   // add CreatedAt and UpdatedAT
@@ -104,6 +106,6 @@ userSchema.pre('save', async function (next) {
 })
 
 
-const User = mongoose.model('User', userSchema);
+const User = mongooseAdmin.model('User', userSchema);
 
 module.exports = User

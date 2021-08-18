@@ -41,11 +41,15 @@ function Home({ userLoggedIn, user }) {
 
     {!loggedIn ? <SignIn pageState={pageState} /> :
       <>
-        <div>user is logged in</div>
+        <div>user is logged in show data</div>
 
         {/* <button onClick={checkToken}>click me</button> */}
 
-        <div><Link to="/mockApi" className="navItem">mockApi</Link></div>
+
+        <div>
+          <h1><Link to="/mockApi" className="navItem">mockApi</Link></h1>
+          thats invisible 
+        </div>
       </>
     }
 

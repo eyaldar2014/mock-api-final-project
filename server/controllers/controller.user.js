@@ -47,7 +47,7 @@ const userController = function () {
     }
   }
   this.getProfile = async (req, res) => {
-    
+
     console.log('here')
     try {
       res.send(req.user)
@@ -74,7 +74,7 @@ const userController = function () {
     const validation = userValidation.updateUserValidation(req, res, updates)
 
     try {
-      
+
       if (!validation) return res.sendStatus(400)
 
       // validation will happen before "await user.save()". default operation. not like "User.findByIdAndUpdate()", that requires opts
@@ -88,6 +88,7 @@ const userController = function () {
     }
   }
 }
+
 
 
 module.exports = userController

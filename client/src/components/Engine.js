@@ -11,6 +11,7 @@ const Engine = (props) => {
     customer (schema like profile) */}
 
     <h1>mockapi</h1>
+    <h2>only if user is logged in </h2>
 
 
     1.  design user functionality :
