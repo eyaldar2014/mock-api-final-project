@@ -79,8 +79,10 @@ function SignIn({ pageState }) {
     }
     catch (error) {
       // if error print error to the user and try again
-
-      if (error.response.data.details.includes('duplicate')) {
+      if (!error.response.data.details) {
+        error.response.data.details = 'invalid attempt'
+      }
+      else if (error.response.data.details.includes('duplicate')) {
         error.response.data.details = 'email already exists'
       }
       else if (!error.response.data.details.includes('password must ')) {

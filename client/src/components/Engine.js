@@ -1,7 +1,7 @@
 import react from 'react'
 
 
-const Engine = (props) => {
+const Engine = ({user}) => {
 
 
   return <>
@@ -10,6 +10,7 @@ const Engine = (props) => {
  this new component should depend on the authentication proccess and token. also, must be unique for each 
     customer (schema like profile) */}
 
+{!user ? <h3>no user, please login or register first</h3> : <>
     <h1>mockapi</h1>
     <h2>only if user is logged in </h2>
 
@@ -37,7 +38,7 @@ const Engine = (props) => {
 
 
 
-
+    </>}
   </>
 }
 

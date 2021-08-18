@@ -17,7 +17,7 @@ const userController = function () {
 
       // a way to solve with cookies instead of headers
       // to delete cookie use : 'res.clearCookie("key")'
-      return res.status(201).cookie('access_token', token).send({ user: user, token })
+      return res.status(201).clearCookie('access_token').cookie('access_token', token).send({ user: user, token })
     }
     catch (err) {
       // return res.status(400).send({ "Error!": err.message })
@@ -30,7 +30,7 @@ const userController = function () {
       const user = await User.findByCredentials(req.body.email, req.body.password)
       const token = await user.generateAuthToken()
 
-      return res.send({ user, token })
+      return res.clearCookie('access_token').cookie('access_token', token).send({ user, token })
     } catch (err) {
       return res.status(400).send({ "details": err.message })
     }
@@ -48,7 +48,7 @@ const userController = function () {
   }
   this.getProfile = async (req, res) => {
 
-    console.log('here')
+    // console.log('here')
     try {
       res.send(req.user)
     } catch (error) {

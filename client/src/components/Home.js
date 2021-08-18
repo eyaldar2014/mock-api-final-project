@@ -1,5 +1,5 @@
 import react from 'react'
-// import axios from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
@@ -27,15 +27,15 @@ function Home({ userLoggedIn, user }) {
   }
 
 
-  // const checkToken = async () => {
-  //   try{ 
-  //     const response = await axios.get('/api/users/me')
-  //     console.log(response)
-  //   }
-  //   catch(error){
-  //     console.log(error)
-  //   }
-  // }
+  const checkToken = async () => {
+    try{ 
+      const response = await axios.get('/api/users/me')
+      console.log(response)
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
 
   return <>
 
@@ -43,7 +43,7 @@ function Home({ userLoggedIn, user }) {
       <>
         <div>user is logged in show data</div>
 
-        {/* <button onClick={checkToken}>click me</button> */}
+        <button onClick={checkToken}>click me</button>
 
 
         <div>
