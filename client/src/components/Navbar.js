@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom";
 import { FiHome } from "react-icons/fi";
-import { GiPhone, GiBlackBook } from "react-icons/gi";
+import { GiPhone, GiBlackBook, GiAbstract059 } from "react-icons/gi";
 
 const Navbar =()=>{
 
@@ -14,9 +14,13 @@ const Navbar =()=>{
                     <Link to="/" className="navItem"><FiHome /> Home</Link>
                 </li>                
                 <li>
+                    <Link to="/mockApi" className="navItem"><GiAbstract059 /> mockApi</Link>
+                </li>                
+                <li>
                     <Link to="/about" className="navItem"><GiBlackBook /> About</Link>
                 </li>
-                <li><Link to="/contact" className="navItem"><GiPhone /> Contact</Link>
+                <li>
+                    <Link to="/contact" className="navItem"><GiPhone /> Contact</Link>
                 </li>
             </ul>
 

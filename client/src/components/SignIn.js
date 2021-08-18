@@ -1,21 +1,10 @@
 import react from 'react'
 import axios from 'axios';
-// import { Link } from 'react-router-dom';
 
 import ImageHeader from './Accessories/ImageHeader'
 
 
 function SignIn({ pageState }) {
-  // react.useEffect(() => {}, [])
-
-
-  // const [action, setAction] = react.useState({
-  //   current: 'Login',
-  //   second: 'Register'
-  // })
-
-
-
 
   const [action, setAction] = react.useState({
     current: 'Login',
@@ -29,6 +18,7 @@ function SignIn({ pageState }) {
     success: true,
     status: ""
   })
+
 
   const handleChange = (e) => {
 
@@ -66,51 +56,37 @@ function SignIn({ pageState }) {
     }
   }
 
-
   const userDetails = async (e) => {
     e.preventDefault()
     e.target.disabled = true
 
-    const response = await callApi()
-    console.log(response)
-
-    // if error print error to the user and try again
-
-
-
-    // if success then change page component to logged in (send true to Home component)
-    // if success - what should I do with the token? understood : cookies or so
-    // where should I redirect the client? the place where the mockApi schema is made - new component
-    // this new component should depend on the authentication proccess and token. also, must be unique for each 
-    // customer (schema like profile)
-
+    await callApi()
 
     return e.target.disabled = false
   }
+
   const callApi = async () => {
 
     // console.log(inputs)
     try {
-      const result = await axios.post('/api/users/' + action.current.toLowerCase(), inputs)
+      await axios.post('/api/users/' + action.current.toLowerCase(), inputs)
+      // console.log('result', result.data)
 
-      console.log('result', result.data)
-
+      // if success then change page component to logged in (send true to Home component)
       pageState(true)
-
+      
       return true
     }
     catch (error) {
+      // if error print error to the user and try again
 
-      console.log(error.response.data)
-      if (error.response.data.details.includes('duplicate')){
+      if (error.response.data.details.includes('duplicate')) {
         error.response.data.details = 'email already exists'
       }
-      else if (!error.response.data.details.includes('password must ')){
+      else if (!error.response.data.details.includes('password must ')) {
         error.response.data.details = 'invalid login'
       }
-
-      console.error('error', 'status: ' + error.response.status, error.response.data.details)
-
+      // console.error('error', 'status: ' + error.response.status, error.response.data.details)
 
       setResponse({
         success: false,
@@ -126,7 +102,7 @@ function SignIn({ pageState }) {
 
     <div className="formContainer">
       <div className='form'>
-        <ImageHeader name={action.current} img='formBgImg' />
+        <ImageHeader name={action.current} img='signBgImg' />
 
         <form className="formInputs">
           <div className='formInputsSpan'>
@@ -161,16 +137,14 @@ function SignIn({ pageState }) {
           <br />
         </form>
 
-        <div className="formSpan">
-          <span> Or <a onClick={setPage}>{action.second} Now</a></span>
+        <div >
+          <button className="formSignButton" onClick={setPage}>Or {action.second} </button>
         </div>
 
       </div>
     </div>
 
   </>
-
-
 }
 
 export default SignIn;
