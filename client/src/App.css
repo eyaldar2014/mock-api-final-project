@@ -27,8 +27,21 @@
   padding: 0 15px; 
 }
 
+/* button */
+.button{
+  position: absolute;
+  top: 670px;
+  border-width: 1px;
+  border-radius: 3px;
+  padding: 10px;
+  background-color: rgb(228, 159, 80);
+  font-size: 1.3rem;
+  width: 200px;
+}
 
 
+
+/* Components */
 
 /* Landing */
 .landing {
@@ -166,16 +179,6 @@ display: flex;
   background-color: wheat;
   padding: 5px;
 }
-.button{
-  position: absolute;
-  top: 670px;
-  border-width: 1px;
-  border-radius: 3px;
-  padding: 10px;
-  background-color: rgb(228, 159, 80);
-  font-size: 1.3rem;
-  width: 200px;
-}
 .formSignButton{
   left: calc(50% - 180px);
 }
@@ -231,3 +234,27 @@ display: flex;
   text-align: center;
   margin-top: 140px;
 }
+
+
+/* about */
+.aboutContainer{
+  display: flex;
+  min-width: 1000px;
+  padding: 0 200px;
+  min-height: 900px;
+  /* background: aquamarine; */
+}
+.about{
+  padding: 130px 100px;
+  width: 50%;
+}
+.about h1{
+  text-align: center;
+}
+.aboutImg{
+  margin-top: 200px;
+  background: url("https://static.helpjuice.com/helpjuice_production/uploads/upload/image/4752/direct/1589513942239-Software%20Documentation.jpg") no-repeat center center/ cover;
+  width: 50%;
+  max-height: 500px;
+}
+

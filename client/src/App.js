@@ -20,6 +20,8 @@
 // note : for now, I will start with one schema per user, even though, with the slightest validation
 //        I could multiply it. but later, first make all the "moving parts" work
 
+// note : form should be activated
+
 import './App.css';
 import react from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
