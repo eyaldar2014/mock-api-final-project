@@ -121,7 +121,8 @@ display: flex;
   /* background: white; */
 }
 
-/* form */
+/* note : needs to be Sorted  */
+/* form, home, and mockApi */
 .formContainer{
   min-height: 700px;
   min-width: 1000px;
@@ -235,7 +236,6 @@ display: flex;
   margin-top: 140px;
 }
 
-
 /* about */
 .aboutContainer{
   display: flex;
@@ -258,3 +258,41 @@ display: flex;
   max-height: 500px;
 }
 
+/* mockApi buttons */
+.guideButton{
+  left: calc(50% - 500px);
+  text-decoration: none;
+  color: black; 
+}
+.textAreaLocation{
+  position: absolute;
+  top: 270px;
+  left: calc(50% - 200px);
+}
+.mockApiTextarea{
+  height: 450px;
+}
+.createSchemaButton{
+  top: 270px;
+  left: calc(50% - 500px);
+  text-decoration: none;
+  color: black; 
+}
+.createDataButton{
+  top: 470px;
+  left: calc(50% - 500px);
+  text-decoration: none;
+  color: black; 
+}
+.getMockData{
+  top: 270px;
+  left: calc(50% + 200px);
+  text-decoration: none;
+  color: black; 
+}
+.deleteMockData{
+  top: 330px;
+  left: calc(50% + 200px);
+  text-decoration: none;
+  color: black; 
+}

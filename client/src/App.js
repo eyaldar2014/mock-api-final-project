@@ -21,6 +21,7 @@
 //        I could multiply it. but later, first make all the "moving parts" work
 
 // note : form should be activated
+// note : need to add responsiveness
 
 import './App.css';
 import react from 'react'

@@ -1,4 +1,5 @@
 import react from 'react'
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import ImageHeader from './Accessories/ImageHeader'
@@ -7,11 +8,68 @@ import ImageHeader from './Accessories/ImageHeader'
 const Engine = ({ user }) => {
 
 
-  return <>
+  const [textarea, setTextarea] = react.useState("")
+  const [guide, setGuide] = react.useState("first, set up your custom maid schema. enter a text with custom fields between 1 to 100, that looks like this:                       {\"minLength\": 1,\"maxLength\": 3}                   -this will represent the length of the name allowed in you db")
 
-    {/* where should I redirect the client? the place where the mockApi schema is made - new component
- this new component should depend on the authentication proccess and token. also, must be unique for each 
-    customer (schema like profile) */}
+  const [schemaCreated, setSchemaCreated] = react.useState(false)
+
+  const handleTextArea = (e) => {
+
+    setTextarea(e.target.value)
+  }
+
+  const createUserSchema = async () => {
+
+    try {
+      let objectToPost = JSON.parse(textarea)
+
+      const response = await axios.post('/api/mocks/createSchema', objectToPost)
+      setTextarea("")
+      setGuide("a name between minLength to maxLength, only one name at a time for now. example :           {\"name\": \"John\"}"          )
+      setSchemaCreated(true)
+    }
+    catch (error) {
+      setTextarea(error + ' enter valid fields please')
+    }
+  }
+
+  const createUserData = async () => {
+
+    try {
+      if (!schemaCreated) throw new Error('first create schema')
+      let objectToPost = JSON.parse(textarea)
+
+      const response = await axios.post('/api/mocks/createData', objectToPost)
+      setTextarea(JSON.stringify(response.data))
+    }
+    catch (error) {
+      setTextarea(error)
+    }
+  }
+
+  const getAllData = async () => {
+
+    try {
+      const response = await axios.get('/api/mocks/getData')
+      setTextarea(JSON.stringify(response.data))
+    }
+    catch (error) {
+      setTextarea(error)
+    }
+  }
+  const deleteAllData = async () => {
+    try {
+      const response = await axios.delete('/api/mocks/deleteData')
+      setTextarea(JSON.stringify(response.data))
+    }
+    catch (error) {
+      setTextarea(error)
+    }
+  }
+
+
+
+  return <>
 
     {!user ? <>
 
@@ -33,18 +91,34 @@ const Engine = ({ user }) => {
           <ImageHeader name='Mock Api' img='mockApiImg' />
 
           <div >
-            <span className="button homeButton"> Guide / link to about </span>
+            <button><Link to="/about" className="button guideButton"> About the project </Link></button>
+          </div>
+
+          <div>
+            <textarea className="formInput mockApiTextarea textAreaLocation" placeholder={guide} onChange={handleTextArea} value={textarea}></textarea>
           </div>
 
           <div >
-            <span className="button homeButton"> options :<br/><br/> create schema(only length of name for now),<br/><br/> create data(only one name at a time for now),<br/><br/>
-             see all data,<br/><br/> delete all data</span>
+            <button onClick={createUserSchema} className="button createSchemaButton"> create unique schema (POC - more features coming)</button>
           </div>
+
+          <div >
+            <button onClick={createUserData} className="button createDataButton"> create your data,  (POC - more features coming)</button>
+          </div>
+          
+          <div >
+            <button onClick={getAllData} className="button getMockData"> getAllData</button>
+          </div>
+
+          <div >
+            <button onClick={deleteAllData} className="button deleteMockData"> deleteAllData</button>
+          </div>
+
 
         </div>
       </div>
 
-      
+
 
 
 

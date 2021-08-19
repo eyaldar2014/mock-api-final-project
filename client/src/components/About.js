@@ -5,6 +5,7 @@ const About = (props) => {
 
 
   return <>
+
     <div className={'aboutContainer'}>
       <div className={'about'}>
         <h1>About</h1>
@@ -38,8 +39,9 @@ const About = (props) => {
       </div>
 
       <div className='aboutImg'></div>
-
+      
     </div>
+
   </>
 }
 

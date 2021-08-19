@@ -11,10 +11,10 @@ const mockController = function () {
 
       const requestSchema = req.body
       if (!mockValidation.createSchemaValidation(requestSchema)) throw new Error('wrong details')
-
+      req.user.schemaData = requestSchema
+      
       const { email } = req.user
       const response = await createModel(email, requestSchema)
-      req.user.schemaData = requestSchema
       const saveUser = await req.user.save()
 
       return res.status(201).send(saveUser)
@@ -32,7 +32,8 @@ const mockController = function () {
       if (!mockValidation.createDataValidation(name)) throw new Error('wrong details')
 
       const { email } = req.user
-      const requestSchema = req.user.schema
+      const requestSchema = req.user.schemaData
+      // console.log(requestSchema)
       const Mock = await createModel(email, requestSchema)
       const newMock = new Mock({ name })
       const response = await newMock.save()
