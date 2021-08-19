@@ -32,7 +32,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import NotFound from './components/NotFound'
 import Form from './components/Form'
-import Engine from './components/Engine'
+import MockApi from './components/MockApi'
 
 
 
@@ -51,7 +51,7 @@ function App() {
 
   const userLoggedIn = (data) =>{
 
-    setUser(true)
+    setUser(data)
   }
 
   return (
@@ -72,7 +72,7 @@ function App() {
               <Form />
             </Route>
             <Route exact path="/mockApi">
-              <Engine user={user} />
+              <MockApi user={user} />
             </Route>
             <Route exact path="/">
               <Home userLoggedIn={userLoggedIn} user={user}/>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 import SignIn from './SignIn'
+import ImageHeader from './Accessories/ImageHeader'
 
 function Home({ userLoggedIn, user }) {
 
@@ -26,13 +27,16 @@ function Home({ userLoggedIn, user }) {
     }
   }
 
+  const logOut = async () => {
+    
+    try {
+      setLoggedIn(null)
+      userLoggedIn(false)
 
-  const checkToken = async () => {
-    try{ 
-      const response = await axios.get('/api/users/me')
+      const response = await axios.get('/api/users/logout')
       console.log(response)
     }
-    catch(error){
+    catch (error) {
       console.log(error)
     }
   }
@@ -41,15 +45,20 @@ function Home({ userLoggedIn, user }) {
 
     {!loggedIn ? <SignIn pageState={pageState} /> :
       <>
-        <div>user is logged in show data</div>
 
-        <button onClick={checkToken}>click me</button>
+        <div className="formContainer">
+          <div className='form'>
+            <ImageHeader name='Logged In' img='signBgImg' />
+            <div >
+              <button className="button logOutButton" onClick={logOut}>Log Out</button>
+            </div>
+            <div >
+              <button><Link to="/mockApi" className="button mockApiButton">Mock Api</Link></button>
+            </div>
 
-
-        <div>
-          <h1><Link to="/mockApi" className="navItem">mockApi</Link></h1>
-          thats invisible 
+          </div>
         </div>
+
       </>
     }
 
@@ -58,3 +67,16 @@ function Home({ userLoggedIn, user }) {
 }
 
 export default Home;
+
+
+
+// const checkToken = async () => {
+//   try {
+//     const response = await axios.get('/api/users/me')
+//     console.log(response)
+//   }
+//   catch (error) {
+//     console.log(error)
+//   }
+// }
+// <button onClick={checkToken}>click me</button>

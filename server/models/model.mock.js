@@ -1,10 +1,6 @@
 const mongooseMock = require('../db/mongooseMock');
 const mongoose = require('mongoose');
 
-// const bcrypt = require('bcrypt')
-// const validator = require('validator')
-// const jwt = require('jsonwebtoken')
-
 
 const mockSchemaOptions = {
   // add CreatedAt and UpdatedAT
@@ -12,26 +8,34 @@ const mockSchemaOptions = {
 }
 
 const names = {}
-const createSchema = (name) => {
+const createSchema = (email, requestSchema) => {
 
-  let response
-  
-  if (Object.keys(names).includes(name)) response = name[name]
+
+  const { minLength, maxLength } = requestSchema
+
+  let response  
+  if (Object.keys(names).includes(email)) response = names[email]
   else {
     response = new mongoose.Schema({
-      name: {
-        type: String
+
+      name : {
+        type : String,
+        minLength,
+        maxLength,
       }
+
     }, mockSchemaOptions);
 
-    names[name] = response
+
+    names[email] = response
   }
 
+  // console.log(names)
   return response
 }
 
 
-const createModel = (name) => mongooseMock.model(name, createSchema(name));
+const createModel = (email, requestSchema) => mongooseMock.model(email, createSchema(email, requestSchema));
 
 
 

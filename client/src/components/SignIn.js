@@ -140,7 +140,7 @@ function SignIn({ pageState }) {
         </form>
 
         <div >
-          <button className="formSignButton" onClick={setPage}>Or {action.second} </button>
+          <button className="button formSignButton" onClick={setPage}>Or {action.second} </button>
         </div>
 
       </div>

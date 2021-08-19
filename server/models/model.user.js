@@ -52,7 +52,12 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true
     }
-  }]
+  }],
+  schemaData : {
+    type : Object,
+    required : true,
+    default : {}
+  }
 }, userSchemaOptions);
 
 

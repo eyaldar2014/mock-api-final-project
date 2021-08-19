@@ -12,7 +12,7 @@ router.post('/register', usersController.createUser)
 
 router.post('/login', usersController.loginUser)
 
-router.post('/logout', authenticateToken, usersController.logoutUser)
+router.get('/logout', authenticateToken, usersController.logoutUser)
 
 router.get('/me', authenticateToken, usersController.getProfile)
 
