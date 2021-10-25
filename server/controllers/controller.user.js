@@ -6,6 +6,7 @@ const userValidation = new UserValidation()
 
 const userController = function () {
 
+  // create user also logs him in
   this.createUser = async (req, res) => {
 
     try {

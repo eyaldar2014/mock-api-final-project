@@ -9,8 +9,9 @@ const mocksRoute = require('./routes/route.mocks')
 app.use(express.json())
 app.use(cors());
 
-// app.get('/api', (req, res) => res.send('hello world'))
+// route for users
 app.use('/api/users', usersRoute);
+// route for data of users using mockApi
 app.use('/api/mocks', mocksRoute);
 
 

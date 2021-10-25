@@ -4,6 +4,8 @@ require('./db/mongooseAdmin')
 // require('./db/usersMock')
 
 const express = require('express');
+
+// seperate app file for testing purposes
 const app = require('./app')
 const port = process.env.PORT || 5000
 const path = require('path');

@@ -23,7 +23,7 @@ const Engine = ({ user }) => {
     try {
       let objectToPost = JSON.parse(textarea)
 
-      const response = await axios.post('/api/mocks/createSchema', objectToPost)
+      await axios.post('/api/mocks/createSchema', objectToPost)
       setTextarea("")
       setGuide("a name between minLength to maxLength, only one name at a time for now. example :           {\"name\": \"John\"}"          )
       setSchemaCreated(true)

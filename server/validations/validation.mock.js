@@ -3,6 +3,7 @@ const validator = require('validator');
 
 const mockValidation = function () {
 
+  // validation for user creating schame using mockApi
   this.createSchemaValidation = (requestSchema) => {
 
     let check = true
@@ -22,6 +23,7 @@ const mockValidation = function () {
     return check
   }
 
+  // validation for user creating item using mockApi
   this.createDataValidation = (name) => {
     
     let check = true

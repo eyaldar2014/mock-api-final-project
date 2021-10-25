@@ -61,6 +61,8 @@ const userSchema = new mongoose.Schema({
 }, userSchemaOptions);
 
 
+// MiddleWare Section : notice that "statics" are available on the Model, when "methods" are available on instances
+//
 // create token (after login or creating user) :
 userSchema.methods.generateAuthToken = async function () {
 

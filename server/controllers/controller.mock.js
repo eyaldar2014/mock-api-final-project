@@ -5,6 +5,7 @@ const mockValidation = new MockValidation()
 
 const mockController = function () {
 
+  // user creates schema using mockApi
   this.createSchema = async (req, res) => {
 
     try {
@@ -14,7 +15,7 @@ const mockController = function () {
       req.user.schemaData = requestSchema
       
       const { email } = req.user
-      const response = await createModel(email, requestSchema)
+      // const response = await createModel(email, requestSchema)
       const saveUser = await req.user.save()
 
       return res.status(201).send(saveUser)
@@ -24,6 +25,8 @@ const mockController = function () {
     }
 
   }
+
+  // user creates item using mockApi
   this.createData = async (req, res) => {
 
     try {
@@ -31,10 +34,8 @@ const mockController = function () {
       const name = req.body.name
       if (!mockValidation.createDataValidation(name)) throw new Error('wrong details')
 
-      const { email } = req.user
-      const requestSchema = req.user.schemaData
-      // console.log(requestSchema)
-      const Mock = await createModel(email, requestSchema)
+      const { email, schemaData } = req.user
+      const Mock = await createModel(email, schemaData)
       const newMock = new Mock({ name })
       const response = await newMock.save()
 
@@ -43,15 +44,15 @@ const mockController = function () {
     catch (err) {
       return res.status(400).send({ "details": err.message })
     }
-
   }
+
+  // user gets all his using mockApi
   this.getData = async (req, res) => {
 
     try {
 
-      const { email } = req.user
-      const requestSchema = req.user.schema
-      const Mock = await createModel(email, requestSchema)
+      const { email, schemaData } = req.user
+      const Mock = await createModel(email, schemaData)
 
       const userData = await Mock.find({})
       // console.log(userData)
@@ -61,15 +62,14 @@ const mockController = function () {
       res.sendStatus(500)
     }
   }
+
+  // user erases all his using mockApi
   this.deleteAllData = async (req, res) => {
 
     try {
-      const { email } = req.user
-      const requestSchema = req.user.schema
-      const Mock = await createModel(email, requestSchema)
-
-      // const userData2 = await Mock.find({})
-      // console.log('here', userData2)
+      const { email, schemaData } = req.user
+      // const requestSchema = req.user.schema
+      const Mock = await createModel(email, schemaData)
 
       const userDeleted = await Mock.deleteMany({})
 
@@ -78,9 +78,9 @@ const mockController = function () {
       res.sendStatus(500)
     }
   }
-  // later
-  // this.deleteSingleData = async (req, res) => {}
 
+  // later add
+  // this.deleteSingleData = async (req, res) => {}
 }
 
 

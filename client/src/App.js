@@ -1,6 +1,12 @@
 // self comments:
 //
 
+// how to modify schema? it seems that the schema is being created per connection :
+//  i'm able to store different kind of data, on the same resoure (item in mongodb), from different locations.
+//  I want to be able to let the user change their schema after creating it. it might, i assume requires 
+//  disconnect from mongodb before modifying the schema. but that have to be done carefully, because the connections is
+//  a very high layer in the application. and being called from the main 'app.js' file
+
 // CI / CD - docker & jenkins (under development on test project)
 
 // note : react authentication
@@ -16,6 +22,7 @@
 //        & schema validations. and i'll be able to send the response to thier end-point,
 //        that will send the answer to them
 //        A Middleware end-point for the clients, all the validations and storage is being done on my "Admin"/ main mongoDB
+//        bottom line : second layer of JWT token, to seperate user from admin, when storing different data(users details OR mockApi data)
 
 // note : for now, I will start with one schema per user, even though, with the slightest validation
 //        I could multiply it. but later, first make all the "moving parts" work

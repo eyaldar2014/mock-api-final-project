@@ -12,7 +12,8 @@ const createSchema = (email, requestSchema) => {
 
 
   const { minLength, maxLength } = requestSchema
-  // console.log('here', minLength, maxLength)
+  console.log('here too', minLength, maxLength)
+  console.log('names', Object.keys(names))
 
   let response  
   if (Object.keys(names).includes(email)) response = names[email]
@@ -31,7 +32,6 @@ const createSchema = (email, requestSchema) => {
     names[email] = response
   }
 
-  // console.log(names)
   return response
 }
 
