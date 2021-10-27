@@ -13,19 +13,20 @@
 
       This project has both back-end and front-end. 
       Front-end will be writen using React, Css and JS.
-      Back-end will be based on mongoDB using mongoose library, with NodeJS.
+      Back-end will be based on mongoDB using mongoose library, with NodeJS and express.
 
-      The idea is a mock api: it offers itself to the users as a server, 
-      including server actions: 
-      start your own api with collections and validations.
+      The idea is a mock api: it offers itself to the users as a noSQL database, 
+      with dynamic functionallity - add or remove data, read the data and create uniqe schema ("behind the scenes"):
+      start your own noSQL database with unique Schema and validations.
 
-      Must Have:
-      The purpose of the back-end is to be secured, and optioin to create 
-      your own end-point and probably with routes.
+      The purpose of the back-end is to be serve as noSQL platform, and later there will be for the user an optioin to create 
+      his own end-point adress better security. test the server side.
 
       Nice To Have:
-      Idealy (depends on development time and pority), offer a brilliant UI 
-      experience as any mockApi system.
+      Idealy (depends on development time and pority), offer a dynamic UI frontend.
+
+      when the project is ready :
+      use docker and create CI / CD pipeline. upload and use AWS serviecs.
 
 
       return result
@@ -78,8 +79,8 @@ Key goals:
         - users options
         - security
         - unique end-point
-        - API Schema and collections per user
-        - load users data (self made API's with data)
+        - API uniqe Schema per user
+        - load users data (stored in mongoDB on specific collection)
 
 - basic components :
 
@@ -93,13 +94,14 @@ Key goals:
 
 - mongo endpoint :
 
-      - Initialize webApp endpoint (users collection)
-      - create users endpoints (users data functionality)
+      to add in the future : 
+      - Initialize webApp endpoint per user
 
 - authentication / unknown :
 
       - healthy connection between my app to mongoDB, verification 
       - Users Schema
+      - controller validations
 
 - user register and login (with credentials) / unknown :
 
@@ -107,11 +109,11 @@ Key goals:
 
 - basic interface with mockApi functionality (must to have) / unknown :
 
-      - Dinamic Schemas for any users
-      - Dinamic UI for any user
+      - Dynamic Schemas for any users
       - Authentication security
+      - store and save data to seperated collection (for all users)
 
-- design :
+- design (this project is mainly for back-end):
 
       - Nice to have (all functionality must work in comfortable and good looking UI)
 
@@ -121,15 +123,15 @@ Key goals:
 
 ## section 3 :  const times (schedule)
 
-    - design idea (draw) - 1 Hour
-    - basic components - 1 Hour
+    - design idea (draw) - 2 Hour
+    - basic components - 2 Hour
     - mongo endpoint - 1 Hour
 
-    - authentication :user register and login (with credentials) / unknown :update times after starting. assumption 3-5 Hours
+    - authentication :user register and login (with credentials) / unknown :update times after trying. assumption 3-5 Hours. update : indeed 5 hours.
 
-    - product interface with mockApi functionality (must to have) / unknown. update times after starting per each stage. Project Core :
-      - Flexible Schema Per User // Use Switch
-      - create Route end-points for user // React Modified Route + mongo UsersData end-points
+    - product interface with mockApi functionality (must to have) / unknown. update times after trying per each stage. Project Core :
+      - Flexible Schema Per User : 3 hours - mainly research.
+      - create Route end-points for user // React Modified Route + mongo UsersData end-points // to be added in the future.
       - desplay user stored data // Component of victorious !
 
     - design (NiceToHave)
@@ -142,4 +144,4 @@ Key goals:
 *Win the "unknown" barrier;*
 
 
-![plot](./Flow.png)
+![plot](./helpers/mockApi&#x20;work-flow.jpg)

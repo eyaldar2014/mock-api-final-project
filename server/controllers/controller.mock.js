@@ -12,10 +12,8 @@ const mockController = function () {
 
       const requestSchema = req.body
       if (!mockValidation.createSchemaValidation(requestSchema)) throw new Error('wrong details')
-      req.user.schemaData = requestSchema
       
-      const { email } = req.user
-      // const response = await createModel(email, requestSchema)
+      req.user.schemaData = requestSchema
       const saveUser = await req.user.save()
 
       return res.status(201).send(saveUser)

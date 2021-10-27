@@ -21,7 +21,7 @@ afterAll(closeDatabaseConnection)
 
 
 test('Should signup a new user', async () => {
-    
+
   const response = await request(app)
     .post('/api/users/register')
     .send({
@@ -79,14 +79,17 @@ test('Should not login existing user', async () => {
     .expect(400)
 })
 
+// I had d=to replace 'Authorization Bearer' with cookies, so test was also changed
 test('Should fetch user\'s information', async () => {
   const response = await request(app)
     .get('/api/users/me')
-    .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    // .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    .set('Accept-Language', 'en')
+    .set('Cookie', [ 'access_token=' + userOne.tokens[0].token ] )
     .send()
     .expect(200)
-    
-    expect(response.body._id).toBe(userOneId.toString())
+
+  expect(response.body._id).toBe(userOneId.toString())
 })
 
 test('Should NOT fetch user\'s information because of missing Authorization', async () => {
@@ -99,7 +102,9 @@ test('Should NOT fetch user\'s information because of missing Authorization', as
 test('Should delete user\'s account', async () => {
   const response = await request(app)
     .delete('/api/users/me')
-    .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    // .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    .set('Accept-Language', 'en')
+    .set('Cookie', [ 'access_token=' + userOne.tokens[0].token ] )
     .send()
     .expect(200)
 
@@ -117,7 +122,9 @@ test('Should NOT delete user\'s account because of missing Authorization', async
 test('Should update user\'s using valid user fields', async () => {
   const response = await request(app)
     .patch('/api/users/me')
-    .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    // .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    .set('Accept-Language', 'en')
+    .set('Cookie', [ 'access_token=' + userOne.tokens[0].token ] )
     .send({
       email: "kofiko@gmail.com",
       password: "123123aA"
@@ -134,7 +141,9 @@ test('Should update user\'s using valid user fields', async () => {
 test('Should NOT update user\'s using invalid user fields', async () => {
   const response = await request(app)
     .patch('/api/users/me')
-    .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    // .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    .set('Accept-Language', 'en')
+    .set('Cookie', [ 'access_token=' + userOne.tokens[0].token ] )
     .send({
       location: "anywhere"
     })
@@ -143,7 +152,9 @@ test('Should NOT update user\'s using invalid user fields', async () => {
 
     const response2 = await request(app)
     .patch('/api/users/me')
-    .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    // .set('Authorization', "Bearer " + userOne.tokens[0].token)
+    .set('Accept-Language', 'en')
+    .set('Cookie', [ 'access_token=' + userOne.tokens[0].token ] )
     .send({
     // invalid password 
       password: "123456"
